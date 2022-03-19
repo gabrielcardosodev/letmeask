@@ -1,5 +1,7 @@
+import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import { AuthContext } from '../../App'
 import Button from '../../components/Button/Button'
 
 import illustrationImg from '../../assets/images/illustration.svg'
@@ -10,8 +12,13 @@ import { Container } from './styles'
 
 export function Home() {
     const navigate = useNavigate();
+    const { user, signInWithGoogle } = useContext(AuthContext)
 
-    function navigateToNewRoom() {
+    async function handleCreateRoom() {
+         if (!user) {
+            await signInWithGoogle()
+        }
+
         navigate("/rooms/new");
     }
 
@@ -25,7 +32,7 @@ export function Home() {
         <main>
             <div className='main-content'>
                 <img src={logoImg} alt="Logo da Letmeask" />
-                <button onClick={navigateToNewRoom}>
+                <button onClick={handleCreateRoom}>
                     <img src={googleIconImg} alt="Logo do Google" />
                     Cria sua sala com o Google
                 </button>

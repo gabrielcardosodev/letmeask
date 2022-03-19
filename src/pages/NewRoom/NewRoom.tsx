@@ -1,13 +1,17 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
+import { AuthContext } from '../../App'
 import Button from '../../components/Button/Button'
 
 import illustrationImg from '../../assets/images/illustration.svg'
 import logoImg from '../../assets/images/logo.svg'
 
-
 import { Container } from './styles'
+
 export function NewRoom () {
+    const { user } = useContext(AuthContext)
+
     return (
         <Container>
         <aside>
@@ -18,6 +22,7 @@ export function NewRoom () {
         <main>
             <div className='main-content'>
                 <img src={logoImg} alt="Logo da Letmeask" />
+                <h1>{user?.name}</h1>
                 <h2>Crie uma nova sala</h2>
                 <form>
                     <input 
