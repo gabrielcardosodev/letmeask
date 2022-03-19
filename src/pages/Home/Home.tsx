@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom'
+
 import Button from '../../components/Button/Button'
 
 import illustrationImg from '../../assets/images/illustration.svg'
@@ -7,6 +9,12 @@ import googleIconImg from '../../assets/images/google-icon.svg'
 import { Container } from './styles'
 
 export function Home() {
+    const navigate = useNavigate();
+
+    function navigateToNewRoom() {
+        navigate("/rooms/new");
+    }
+
   return(
     <Container>
         <aside>
@@ -17,7 +25,7 @@ export function Home() {
         <main>
             <div className='main-content'>
                 <img src={logoImg} alt="Logo da Letmeask" />
-                <button>
+                <button onClick={navigateToNewRoom}>
                     <img src={googleIconImg} alt="Logo do Google" />
                     Cria sua sala com o Google
                 </button>
