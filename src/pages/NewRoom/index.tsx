@@ -1,5 +1,5 @@
-import { Aside } from "../../components/Aside/Aside"
-import { ContentNewRoom } from "../../components/CreateNewRoom/ContentNewRoom"
+import { Aside } from "../../components/Aside/index"
+import { ContentNewRoom } from "../../components/CreateNewRoom/index"
 
 import styled from "styled-components"
 

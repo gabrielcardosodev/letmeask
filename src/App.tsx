@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, } from 'react-router-dom'
 
-import { Home } from "./pages/Home/Home";
-import { NewRoom } from './pages/NewRoom/NewRoom'
+import { Home } from "./pages/Home/index";
+import { NewRoom } from './pages/NewRoom/index'
 import { AuthContextProvider } from './contexts/AuthContext';
 
 import { GlobalStyles } from './styles/global'

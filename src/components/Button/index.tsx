@@ -5,7 +5,7 @@ import loginIconImg from '../../assets/images/login.svg'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
 
-export default function Button(props: ButtonProps) {
+export function Button(props: ButtonProps) {
   return (
     <ButtonStyles {...props}>
         <img src={loginIconImg} alt="Ícone de login" />
