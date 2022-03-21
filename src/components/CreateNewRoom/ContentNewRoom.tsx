@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth';
-import Button from '../Button/Button'
+import { Button } from '../Button/Button'
 
 import logoImg from '../../assets/images/logo.svg'
 

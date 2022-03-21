@@ -40,6 +40,10 @@ export const Container = styled.main`
                 input, button {
                     width: 100%;
                 }
+
+                button > img {
+                    display: none;
+                }
             }
 
             p {
