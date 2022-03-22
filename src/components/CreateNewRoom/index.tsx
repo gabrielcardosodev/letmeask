@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
-import { Button } from '../Button/index';
 
 import logoImg from '../../assets/images/logo.svg';
 
 import { Container } from './styles';
+import { ButtonStyles } from '../../UI/Button/styles';
 
 export function ContentNewRoom() {
   const { user } = useAuth();
@@ -15,7 +15,7 @@ export function ContentNewRoom() {
         <h2>Crie uma nova sala</h2>
         <form>
           <input type="text" placeholder="Nome da sala" />
-          <Button type="submit">Criar sala</Button>
+          <ButtonStyles type="submit">Criar sala</ButtonStyles>
         </form>
         <p>
           Quer entrar em uma sala já existente? <Link to="/">Clique aqui</Link>

@@ -1,9 +1,9 @@
-import { Button } from '../Button';
-
 import logoImg from '../../assets/images/logo.svg';
 import googleIconImg from '../../assets/images/google-icon.svg';
+import loginIconImg from '../../assets/images/login.svg';
 
 import { Content } from './styles';
+import { ButtonStyles } from '../../UI/Button/styles';
 
 interface HomePageContentProps {
   handleCreateRoom: () => void;
@@ -21,7 +21,10 @@ export function ContentHomePage({ handleCreateRoom }: HomePageContentProps) {
         <div className="separator">ou entre em uma sala</div>
         <form>
           <input type="text" placeholder="Digite o código da sala" />
-          <Button type="submit" />
+          <ButtonStyles type="submit">
+            <img src={loginIconImg} alt="ícone de login" />
+            Entrar em uma sala
+          </ButtonStyles>
         </form>
       </div>
     </Content>
