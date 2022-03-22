@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
     :root {
@@ -59,4 +59,10 @@ export const GlobalStyles = createGlobalStyle`
         cursor: not-allowed;
     }
 
-` 
+`
+
+export const Container = styled.div`
+    display: flex;
+    align-items: stretch;
+    height: 100vh;
+`
