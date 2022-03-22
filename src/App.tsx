@@ -1,23 +1,23 @@
-import { BrowserRouter, Routes, Route, } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { Home } from "./pages/Home/index";
-import { NewRoom } from './pages/NewRoom/index'
+import { Home } from './pages/Home/index';
+import { NewRoom } from './pages/NewRoom/index';
 import { AuthContextProvider } from './contexts/AuthContext';
 
-import { GlobalStyles } from './styles/global'
+import { GlobalStyles } from './styles/global';
 
 export function App() {
   return (
     <>
-    <BrowserRouter>
-      <AuthContextProvider>
-        <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/rooms/new' element={<NewRoom />} />
-        </Routes>
-      </AuthContextProvider>
-    </BrowserRouter>
-    <GlobalStyles />
+      <BrowserRouter>
+        <AuthContextProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/rooms/new" element={<NewRoom />} />
+          </Routes>
+        </AuthContextProvider>
+      </BrowserRouter>
+      <GlobalStyles />
     </>
-  )
-} 
+  );
+}
