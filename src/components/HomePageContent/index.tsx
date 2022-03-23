@@ -1,15 +1,25 @@
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
+
+import { ButtonStyles } from '../../UI/Button/styles';
+
 import logoImg from '../../assets/images/logo.svg';
 import googleIconImg from '../../assets/images/google-icon.svg';
 import loginIconImg from '../../assets/images/login.svg';
 
 import { Content } from './styles';
-import { ButtonStyles } from '../../UI/Button/styles';
 
-interface HomePageContentProps {
-  handleCreateRoom: () => Promise<void>;
-}
+export function ContentHomePage() {
+  const navigate = useNavigate();
+  const { user, signInWithGoogle } = useAuth();
 
-export function ContentHomePage({ handleCreateRoom }: HomePageContentProps) {
+  async function handleCreateRoom() {
+    if (!user) {
+      await signInWithGoogle();
+    }
+
+    navigate('/rooms/new');
+  }
   return (
     <Content>
       <div className="main-content">
