@@ -6,7 +6,7 @@ import { Content } from './styles';
 import { ButtonStyles } from '../../UI/Button/styles';
 
 interface HomePageContentProps {
-  handleCreateRoom: () => void;
+  handleCreateRoom: () => Promise<void>;
 }
 
 export function ContentHomePage({ handleCreateRoom }: HomePageContentProps) {

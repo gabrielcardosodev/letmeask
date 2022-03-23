@@ -1,5 +1,8 @@
+import { FormEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
+
+import { database } from '../../services/firebase';
 
 import logoImg from '../../assets/images/logo.svg';
 
@@ -8,13 +11,34 @@ import { ButtonStyles } from '../../UI/Button/styles';
 
 export function ContentNewRoom() {
   const { user } = useAuth();
+  const [newRoom, setNewRoom] = useState('');
+
+  async function handleCreateRoom(e: FormEvent) {
+    e.preventDefault();
+
+    if (newRoom.trim() === '') {
+      return;
+    }
+
+    const roomRef = database.ref('rooms');
+    const firebaseRoom = await roomRef.push({
+      title: newRoom,
+      authorId: user?.id,
+    });
+  }
+
   return (
     <Container>
       <div>
         <img src={logoImg} alt="Logo da Letmeask" />
         <h2>Crie uma nova sala</h2>
-        <form>
-          <input type="text" placeholder="Nome da sala" />
+        <form onSubmit={handleCreateRoom}>
+          <input
+            type="text"
+            placeholder="Nome da sala"
+            onChange={(e) => setNewRoom(e.target.value)}
+            value={newRoom}
+          />
           <ButtonStyles type="submit">Criar sala</ButtonStyles>
         </form>
         <p>
