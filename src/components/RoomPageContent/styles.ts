@@ -11,8 +11,10 @@ export const Header = styled.header`
     justify-content: space-between;
     align-items: center;
 
-    > img {
-      max-height: 45px;
+    a {
+      img {
+        max-height: 45px;
+      }
     }
   }
 `;
@@ -63,13 +65,31 @@ export const Main = styled.main`
       align-items: center;
       margin-top: 16px;
 
-      span {
+      .user-info {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+        }
+
+        span {
+          margin-left: 0.5rem;
+          color: var(--black);
+          font-weight: 500;
+          font-size: 1rem;
+        }
+      }
+
+      > span {
         font-size: 1rem;
         font-weight: 500;
         font-family: 'Roboto', sans-serif;
         color: var(--gray-dark);
 
-        a {
+        button {
           border: 0;
           background: transparent;
           font-size: 1rem;
