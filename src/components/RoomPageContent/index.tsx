@@ -1,11 +1,11 @@
 import { Link, useParams } from 'react-router-dom';
 
+import { RoomButton } from '../RoomButton';
 import { ButtonStyles } from '../../UI/Button/styles';
 
 import logoImg from '../../assets/images/logo.svg';
 
 import { Header, Main } from './styles';
-import { RoomButton } from '../RoomButton';
 
 type RoomParams = {
   id: string;

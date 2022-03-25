@@ -25,8 +25,8 @@ export function ContentHomePage() {
     navigate('/rooms/new');
   }
 
-  async function handleJoinRoom(event: FormEvent) {
-    event.preventDefault();
+  async function handleJoinRoom(e: FormEvent) {
+    e.preventDefault();
 
     if (roomCode.trim() === '') {
       return;
@@ -54,7 +54,7 @@ export function ContentHomePage() {
           <input
             type="text"
             placeholder="Digite o código da sala"
-            onChange={(event) => setRoomCode(event.target.value)}
+            onChange={(e) => setRoomCode(e.target.value)}
             value={roomCode}
           />
           <ButtonStyles type="submit">

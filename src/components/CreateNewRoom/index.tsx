@@ -2,12 +2,13 @@ import { FormEvent, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 
+import { ButtonStyles } from '../../UI/Button/styles';
+
 import { database } from '../../services/firebase';
 
 import logoImg from '../../assets/images/logo.svg';
 
 import { Container } from './styles';
-import { ButtonStyles } from '../../UI/Button/styles';
 
 export function ContentNewRoom() {
   const { user } = useAuth();
