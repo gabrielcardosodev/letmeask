@@ -24,14 +24,14 @@ export function ContentRoomPage() {
       </Header>
 
       <Main>
-        <div className="room-title">
+        <div>
           <h1>Sala React Q&amp;A</h1>
           <span>4 perguntas</span>
         </div>
 
         <form>
           <textarea placeholder="O que você quer perguntar?" />
-          <div className="form-footer">
+          <div>
             <span>
               Para enviar uma pergunta, <Link to="/">faça seu login.</Link>
             </span>

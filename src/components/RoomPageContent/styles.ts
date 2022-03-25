@@ -21,7 +21,7 @@ export const Main = styled.main`
   max-width: 800px;
   margin: 0 auto;
 
-  .room-title {
+  > div {
     margin: 32px 0 24px;
     display: flex;
     align-items: center;
@@ -57,7 +57,7 @@ export const Main = styled.main`
       max-height: 300px;
     }
 
-    .form-footer {
+    > div {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -69,7 +69,7 @@ export const Main = styled.main`
         font-family: 'Roboto', sans-serif;
         color: var(--gray-dark);
 
-        button {
+        a {
           border: 0;
           background: transparent;
           font-size: 1rem;
