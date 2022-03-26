@@ -3,14 +3,16 @@ import { Link, useParams } from 'react-router-dom';
 import { toast, Toaster } from 'react-hot-toast';
 import { useAuth } from '../../hooks/useAuth';
 
+import { Question } from '../Question';
 import { RoomButton } from '../RoomButton';
-import { ButtonStyles } from '../../UI/Button/styles';
 
 import { database } from '../../services/firebase';
 
 import logoImg from '../../assets/images/logo.svg';
+import emptyQuestionsImg from '../../assets/images/empty-questions.svg';
 
 import { Header, Main } from './styles';
+import { ButtonStyles } from '../../UI/Button/styles';
 
 type FirebaseQuestions = Record<
   string,
@@ -114,7 +116,7 @@ export function ContentRoomPage() {
       </Header>
 
       <Main>
-        <div>
+        <div className="user">
           <h1>Sala: {title}</h1>
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
@@ -133,7 +135,7 @@ export function ContentRoomPage() {
               </div>
             ) : (
               <span>
-                Para enviar uma pergunta,
+                Para enviar uma pergunta,{' '}
                 <button onClick={signInWithGoogle}>faça seu login.</button>
               </span>
             )}
@@ -142,6 +144,29 @@ export function ContentRoomPage() {
             </ButtonStyles>
           </div>
         </form>
+
+        {questions.length === 0 && (
+          <div className="no-question">
+            <img
+              src={emptyQuestionsImg}
+              alt="Imagem que ilustra ainda não ter mensagens criadas"
+            />
+            <h2>Nenhuma pergunta por aqui...</h2>
+            <p>
+              Faça o seu login e seja a primeira pessoa a fazer uma pergunta!
+            </p>
+          </div>
+        )}
+
+        {questions.map((question) => {
+          return (
+            <Question
+              key={question.id}
+              content={question.content}
+              author={question.author}
+            />
+          );
+        })}
       </Main>
     </>
   );

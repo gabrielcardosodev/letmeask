@@ -23,7 +23,7 @@ export const Main = styled.main`
   max-width: 800px;
   margin: 0 auto;
 
-  > div {
+  .user {
     margin: 32px 0 24px;
     display: flex;
     align-items: center;
@@ -59,7 +59,7 @@ export const Main = styled.main`
       max-height: 300px;
     }
 
-    > div {
+    div {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -83,7 +83,7 @@ export const Main = styled.main`
         }
       }
 
-      > span {
+      span {
         font-size: 1rem;
         font-weight: 500;
         font-family: 'Roboto', sans-serif;
@@ -103,6 +103,25 @@ export const Main = styled.main`
           }
         }
       }
+    }
+  }
+
+  .no-question {
+    margin-top: 4.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      margin-top: 1rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: var(--black);
+    }
+
+    p {
+      margin-top: 0.5rem;
+      color: var(--gray-dark);
     }
   }
 `;
