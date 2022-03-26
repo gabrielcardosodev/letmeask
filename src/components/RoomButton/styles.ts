@@ -10,6 +10,10 @@ export const RoomButtonStyles = styled.button`
 
   display: flex;
 
+  &:hover {
+    border-color: var(--hover-purple);
+  }
+
   div {
     height: 40px;
     background: var(--purple);
@@ -17,6 +21,11 @@ export const RoomButtonStyles = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.2s;
+
+    &:hover {
+      background: var(--hover-purple);
+    }
   }
 
   span {

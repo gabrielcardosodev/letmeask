@@ -23,24 +23,24 @@ export const Content = styled.main`
     > button {
       margin-top: 4rem;
       height: 3rem;
-      background-color: #ea4335;
-      color: var(--details);
+      border: 1px solid var(--gray-medium);
+      background: transparent;
+      color: var(--black);
       font-weight: 500;
-      border: 0;
       border-radius: 0.5rem;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      transition: filter 0.2s;
+      transition: border 0.2;
 
       img {
         margin-right: 0.5rem;
       }
 
       &:hover {
-        filter: brightness(0.9);
+        border-color: var(--hover-gray-medium);
       }
     }
 
@@ -76,6 +76,11 @@ export const Content = styled.main`
         padding: 0 1rem;
         background: var(--background);
         border: 1px solid var(--gray-medium);
+
+        &:focus {
+          outline: none;
+          border: 1px solid var(--purple);
+        }
       }
 
       input,

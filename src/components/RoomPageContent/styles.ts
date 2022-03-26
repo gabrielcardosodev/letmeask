@@ -51,12 +51,18 @@ export const Main = styled.main`
       width: 100%;
       border: 0;
       padding: 1rem;
+      border: none;
       border-radius: 0.5rem;
       background: var(--details);
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
       resize: vertical;
       min-height: 130px;
       max-height: 300px;
+
+      &:focus {
+        outline: none;
+        border: 1px solid var(--purple);
+      }
     }
 
     div {

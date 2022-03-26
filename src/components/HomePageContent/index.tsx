@@ -8,7 +8,7 @@ import { ButtonStyles } from '../../UI/Button/styles';
 import { database } from '../../services/firebase';
 
 import logoImg from '../../assets/images/logo.svg';
-import googleIconImg from '../../assets/images/google-icon.svg';
+import googleImg from '../../assets/images/google-icon.svg';
 import loginIconImg from '../../assets/images/login.svg';
 
 import { Content } from './styles';
@@ -49,7 +49,7 @@ export function ContentHomePage() {
         <div className="main-content">
           <img src={logoImg} alt="Logo da Letmeask" />
           <button onClick={handleCreateRoom}>
-            <img src={googleIconImg} alt="Logo do Google" />
+            <img src={googleImg} alt="Logo do Google" />
             Cria sua sala com o Google
           </button>
           <div className="separator">ou entre em uma sala</div>
