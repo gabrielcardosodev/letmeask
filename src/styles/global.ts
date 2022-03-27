@@ -14,7 +14,7 @@ export const GlobalStyles = createGlobalStyle`
         --gray-light: #DBDCDD;
 
         --pink-dark: #E559F9;
-        --ping-light: #D67EE2;
+        --pink-light: #D67EE2;
 
         --hover-purple: #6F4BD8;
         --hover-danger: #D73754;
