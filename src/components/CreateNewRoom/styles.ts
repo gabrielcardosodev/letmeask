@@ -35,6 +35,11 @@ export const Container = styled.main`
         padding: 0 1rem;
         background: var(--background);
         border: 1px solid var(--gray-medium);
+
+        &:focus {
+          outline: none;
+          border: 1px solid var(--purple);
+        }
       }
 
       input,
