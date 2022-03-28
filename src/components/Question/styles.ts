@@ -37,5 +37,30 @@ export const Container = styled.div`
         font-size: 1rem;
       }
     }
+
+    button {
+      border: 0;
+      background: transparent;
+
+      &.like-button {
+        display: flex;
+        align-items: flex-end;
+        color: var(--gray-dark);
+        gap: 0.5rem;
+        transition: filter 0.2s;
+
+        &.liked {
+          color: var(--purple);
+
+          svg path {
+            stroke: var(--purple);
+          }
+        }
+      }
+
+      &:hover {
+        filter: brightness(0.8);
+      }
+    }
   }
 `;
