@@ -28,3 +28,17 @@ export const ButtonStyles = styled.button`
     opacity: 0.6;
   }
 `;
+
+export const AdminButtonStyles = styled(ButtonStyles)`
+  background-color: var(--background);
+  border: 1px solid var(--purple);
+  color: var(--purple);
+  transition: 0.2s;
+  margin-top: 0;
+
+  &:not(:disabled):hover {
+    background-color: transparent;
+    color: var(--hover-purple);
+    border-color: var(--hover-purple);
+  }
+`;
