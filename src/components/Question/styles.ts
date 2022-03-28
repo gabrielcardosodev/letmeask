@@ -33,7 +33,7 @@ export const Container = styled.div`
 
       span {
         margin-left: 0.5rem;
-        color: var(--grey-dark);
+        color: var(--gray-dark);
         font-size: 1rem;
       }
     }
