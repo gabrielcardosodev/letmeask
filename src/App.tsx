@@ -6,6 +6,7 @@ import { AuthContextProvider } from './contexts/AuthContext';
 
 import { GlobalStyles } from './styles/global';
 import { Room } from './pages/Room';
+import { AdminPage } from './pages/AdminPage';
 
 export function App() {
   return (
@@ -16,6 +17,7 @@ export function App() {
             <Route path="/" element={<Home />} />
             <Route path="/rooms/new" element={<NewRoom />} />
             <Route path="/rooms/:id" element={<Room />} />
+            <Route path="/rooms/admin/:id" element={<AdminPage />} />
           </Routes>
         </AuthContextProvider>
       </BrowserRouter>
