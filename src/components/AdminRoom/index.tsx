@@ -1,11 +1,13 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useRoom } from '../../hooks/useRoom';
 
 import { Question } from '../Question';
 import { RoomButton } from '../RoomButton';
+import { database } from '../../services/firebase';
 
 import logoImg from '../../assets/images/logo.svg';
 import emptyQuestionsImg from '../../assets/images/empty-questions.svg';
+import deleteImg from '../../assets/images/delete.svg';
 
 import { Header, Main } from './styles';
 import { AdminButtonStyles } from '../../UI/Button/styles';
@@ -18,6 +20,21 @@ export function AdminRoom() {
   const params = useParams<RoomParams>();
   const roomId = params.id;
   const { title, questions } = useRoom(roomId!);
+  const navigate = useNavigate();
+
+  async function handleCloseRoom() {
+    await database.ref(`rooms/${roomId}`).update({
+      closedAt: new Date(),
+    });
+
+    navigate('/');
+  }
+
+  async function handleRemoveQuestion(questionId: string) {
+    if (window.confirm('Tem certeza que você deseja excluir esta pergunta?')) {
+      await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
+    }
+  }
 
   return (
     <>
@@ -28,7 +45,9 @@ export function AdminRoom() {
           </Link>
           <div>
             <RoomButton code={roomId || ''} />
-            <AdminButtonStyles>Encerrar sessão</AdminButtonStyles>
+            <AdminButtonStyles onClick={handleCloseRoom}>
+              Encerrar sessão
+            </AdminButtonStyles>
           </div>
         </div>
       </Header>
@@ -58,7 +77,14 @@ export function AdminRoom() {
               key={question.id}
               content={question.content}
               author={question.author}
-            />
+            >
+              <button
+                type="button"
+                onClick={() => handleRemoveQuestion(question.id)}
+              >
+                <img src={deleteImg} alt="icone de lixeira" />
+              </button>
+            </Question>
           );
         })}
       </Main>
