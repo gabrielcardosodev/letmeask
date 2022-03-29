@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import Modal from 'react-modal';
 import { useRoom } from '../../hooks/useRoom';
 
 import { Question } from '../Question';
@@ -11,6 +13,7 @@ import deleteImg from '../../assets/images/delete.svg';
 
 import { Header, Main } from './styles';
 import { AdminButtonStyles } from '../../UI/Button/styles';
+import { CloseRoomModal } from '../CloseRoomModal';
 
 type RoomParams = {
   id: string;
@@ -20,7 +23,16 @@ export function AdminRoom() {
   const params = useParams<RoomParams>();
   const roomId = params.id;
   const { title, questions } = useRoom(roomId!);
+  const [modalIsOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   async function handleCloseRoom() {
     await database.ref(`rooms/${roomId}`).update({
@@ -45,7 +57,11 @@ export function AdminRoom() {
           </Link>
           <div>
             <RoomButton code={roomId || ''} />
-            <AdminButtonStyles onClick={handleCloseRoom}>
+            <AdminButtonStyles
+              onClick={() => {
+                openModal();
+              }}
+            >
               Encerrar sessão
             </AdminButtonStyles>
           </div>
@@ -88,6 +104,12 @@ export function AdminRoom() {
           );
         })}
       </Main>
+
+      <CloseRoomModal
+        modalIsOpen={modalIsOpen}
+        closeModal={closeModal}
+        handleCloseRoom={handleCloseRoom}
+      />
     </>
   );
 }
