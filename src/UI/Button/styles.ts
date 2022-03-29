@@ -42,3 +42,28 @@ export const AdminButtonStyles = styled(ButtonStyles)`
     border-color: var(--hover-purple);
   }
 `;
+
+export const ButtonCancelStyles = styled(ButtonStyles)`
+  background-color: var(--gray-light);
+  border: none;
+  color: var(--gray-dark);
+  transition: 0.2s;
+  margin-top: 0;
+
+  &:not(:disabled):hover {
+    background-color: var(--hover-gray-light);
+    color: none;
+  }
+`;
+
+export const ButtonDeleteRoomStyles = styled(ButtonStyles)`
+  background-color: var(--danger);
+  color: var(--details);
+  transition: 0.2s;
+  margin-top: 0;
+
+  &:not(:disabled):hover {
+    background-color: var(--hover-danger);
+    color: none;
+  }
+`;
