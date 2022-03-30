@@ -141,4 +141,12 @@ export const Main = styled.main`
       color: var(--gray-dark);
     }
   }
+
+  .delete-icon {
+    transition: fill 0.2s;
+
+    & > svg path:hover {
+      stroke: var(--danger);
+    }
+  }
 `;
