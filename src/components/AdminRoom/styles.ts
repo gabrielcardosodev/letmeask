@@ -143,10 +143,33 @@ export const Main = styled.main`
   }
 
   .delete-icon {
-    transition: fill 0.2s;
+    transition: stroke 0.2s;
 
-    & > svg path:hover {
-      stroke: var(--danger);
+    svg {
+      & path:hover {
+        stroke: var(--hover-danger);
+      }
+    }
+  }
+
+  .highlighted-icon {
+    transition: stroke 0.2s;
+
+    svg path {
+      &:hover {
+        stroke: var(--hover-purple);
+      }
+    }
+  }
+
+  .answered-icon {
+    transition: stroke 0.2s;
+
+    svg path,
+    svg circle {
+      &:hover {
+        stroke: var(--hover-purple);
+      }
     }
   }
 `;

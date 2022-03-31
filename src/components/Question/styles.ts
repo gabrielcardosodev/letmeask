@@ -11,6 +11,19 @@ export const Container = styled.div`
     margin-top: 0.5rem;
   }
 
+  &.highlighted {
+    background: #f4f0ff;
+    border: 1px solid var(--purple);
+
+    .user-info span {
+      color: var(--black);
+    }
+  }
+
+  &.answered {
+    background: var(--gray-light);
+  }
+
   p {
     color: var(--black);
   }
@@ -24,6 +37,7 @@ export const Container = styled.div`
     .user-info {
       display: flex;
       align-items: center;
+      gap: 0;
 
       img {
         width: 32px;
@@ -36,6 +50,11 @@ export const Container = styled.div`
         color: var(--gray-dark);
         font-size: 1rem;
       }
+    }
+
+    > div {
+      display: flex;
+      gap: 1.6rem;
     }
 
     button {
