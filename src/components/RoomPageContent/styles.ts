@@ -11,9 +11,17 @@ export const Header = styled.header`
     justify-content: space-between;
     align-items: center;
 
+    @media only screen and (max-width: 600px) {
+      justify-content: center;
+    }
+
     a {
       img {
         max-height: 45px;
+
+        @media only screen and (max-width: 600px) {
+          display: none;
+        }
       }
     }
   }
@@ -22,6 +30,14 @@ export const Header = styled.header`
 export const Main = styled.main`
   max-width: 800px;
   margin: 0 auto;
+
+  @media only screen and (max-width: 800px) {
+    max-width: 600px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    max-width: 400px;
+  }
 
   .user {
     margin: 32px 0 24px;
@@ -117,6 +133,10 @@ export const Main = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media only screen and (max-width: 600px) {
+      text-align: center;
+    }
 
     h2 {
       margin-top: 1rem;

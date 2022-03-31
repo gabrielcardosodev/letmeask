@@ -26,6 +26,7 @@ export const Container = styled.div`
 
   p {
     color: var(--black);
+    width: 100%;
   }
 
   footer {

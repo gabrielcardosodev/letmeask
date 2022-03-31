@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const Header = styled.header`
   padding: 24px;
   border-bottom: 1px solid #e2e2e2;
+  @media only screen and (max-width: 400px) {
+    max-width: 400px;
+    width: 100%;
+  }
 
   .content {
     max-width: 1120px;
@@ -11,9 +15,16 @@ export const Header = styled.header`
     justify-content: space-between;
     align-items: center;
 
+    @media only screen and (max-width: 600px) {
+      justify-content: center;
+    }
+
     a {
       img {
         max-height: 45px;
+        @media only screen and (max-width: 600px) {
+          display: none;
+        }
       }
     }
 
@@ -22,6 +33,9 @@ export const Header = styled.header`
       justify-content: center;
       gap: 1rem;
 
+      @media only screen and (max-width: 600px) {
+        flex-direction: column;
+      }
       button {
         height: 3rem;
       }
@@ -32,6 +46,14 @@ export const Header = styled.header`
 export const Main = styled.main`
   max-width: 800px;
   margin: 0 auto;
+
+  @media only screen and (max-width: 800px) {
+    max-width: 600px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    max-width: 400px;
+  }
 
   .user {
     margin: 32px 0 24px;

@@ -78,6 +78,11 @@ export const GlobalStyles = createGlobalStyle`
         padding: 3rem;
         border-radius: 0.25rem;
         position: relative;
+
+        @media only screen and (max-width: 600px) {
+            max-width: 375px;
+            width: 100%;
+        }
     }
 `;
 

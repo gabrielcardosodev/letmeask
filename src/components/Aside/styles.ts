@@ -6,6 +6,10 @@ export const Container = styled.aside`
   justify-content: center;
   flex-direction: column;
 
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+
   background: var(--purple);
   color: #ffffff;
 

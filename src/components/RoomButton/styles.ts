@@ -15,7 +15,7 @@ export const RoomButtonStyles = styled.button`
   }
 
   div {
-    height: 40px;
+    height: 45px;
     background: var(--purple);
     padding: 0 0.8rem;
     display: flex;
