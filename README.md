@@ -4,6 +4,7 @@
 
 <h1 align="center">
     <img alt="Letmeask" title="Letmeask" src="https://raw.githubusercontent.com/guilhermecapitao/letmeask/master/.github/cover.svg" />
+    <img alt="Letmeask" title="Letmeask" src="https://i.imgur.com/Po4YgSc.png" />
 </h1>
 
 <br>
